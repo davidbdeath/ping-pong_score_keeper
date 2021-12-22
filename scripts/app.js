@@ -64,7 +64,6 @@ function toggleModal(elm, showBool) {
 }
 
 function clearScore() {
-	toggleModal(winnerModal, false);
 	p1.score = 0;
 	p2.score = 0;
 }
@@ -89,4 +88,6 @@ p2.button.addEventListener('click', () => {
 newGame.addEventListener('click', () => {
 	clearScore();
 	clearDisplay('scoreDisplay');
+	isGameOver = false;
+	toggleModal(winnerModal, false);
 });
