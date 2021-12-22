@@ -3,7 +3,7 @@
 @use '../components/buttons';
 
 .score {
-	$fs: 4rem;
+	$fs: 2rem;
 	--gap: 1.3rem;
 	justify-content: center;
 	margin-bottom: 2rem;
@@ -29,7 +29,7 @@
 
 	input {
 		display: block;
-		height: $fs;
+		// height: $fs;
 		width: 8rem;
 		font-size: $fs;
 		line-height: $fs;
