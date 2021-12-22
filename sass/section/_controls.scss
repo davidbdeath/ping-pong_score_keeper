@@ -1,0 +1,19 @@
+@use '../abstracts'as *;
+@use '../base/utility';
+
+.player-name-grp {
+	@extend .flex;
+	--gap: 0;
+	margin-top: 1rem;
+
+	label {
+		@extend .sr-only;
+	}
+
+	input {
+		width: 100%;
+		color: $f-clr;
+		border: none;
+		background: none;
+	}
+}

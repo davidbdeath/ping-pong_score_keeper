@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.block {
+	padding: 1rem;
+	background-color: rgba($block, .10);
+	border-radius: 6px;
+}
+
+

@@ -1,0 +1,51 @@
+@use '../abstracts'as *;
+@use '../base/utility';
+
+button {
+	color: $f-clr;
+	border: none;
+	border-radius: 6px;
+}
+
+.btn-grp {
+	@extend .flex;
+	--gap: 0;
+	width: 100%;
+	border-radius: 6px;
+	overflow: hidden;
+
+	button {
+		$bg-clr: white;
+		width: 100%;
+		border-radius: 0;
+
+		&:first-child {
+			background-color: $bg-clr;
+
+			&:active {
+				background-color: mix($bg-clr, black, 90%);
+			}
+		}
+
+		&:last-child {
+			background-color: $bg-clr;
+
+			&:active {
+				background-color: mix($bg-clr, black, 90%);
+			}
+		}
+	}
+}
+
+.btn-reset {
+	display: block;
+	margin-top: 2rem;
+	margin-inline: auto;
+	padding-inline: 3rem;
+	padding-block: .4rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: rgba(black, .7);
+	background-color: $f-clr;
+}

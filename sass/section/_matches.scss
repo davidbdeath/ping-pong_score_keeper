@@ -1,0 +1,25 @@
+@use '../abstracts'as *;
+@use '../base/utility';
+
+.matches {
+	$fs: 2rem;
+	margin-top: 1rem;
+	margin-left: 2rem;
+
+	label {
+		@extend .sr-only;
+	}
+
+	input {
+		height: $fs;
+		width: 4rem;
+		font-size: $fs;
+		line-height: $fs;
+	}
+
+	span {
+		font-size: $fs;
+		line-height: $fs
+	}
+
+}

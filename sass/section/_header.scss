@@ -1,0 +1,14 @@
+@use '../abstracts'as *;
+@use '../base/utility';
+
+header {
+	@extend .flex;
+	margin-block: 2rem;
+
+	.heading-svg {
+		g {
+			fill: $f-clr;
+		}
+		width: 2rem;
+	}
+}

@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+h1 {
+	margin-left: .5rem;
+	font-family: $ff-bang;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+
+// .h2-winner formating winner-history section

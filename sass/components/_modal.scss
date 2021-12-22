@@ -1,0 +1,64 @@
+@use '../abstracts'as *;
+@use '../base/utility';
+@use 'buttons';
+
+.modal-container {
+	@extend .center;
+
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba($modal, .8);
+	backdrop-filter: blur(4px);
+
+}
+
+.modal {
+	@extend .center;
+	width: fit-content;
+	text-align: center;
+	backdrop-filter: blur(4px);
+	background-color: rgba($block, .30);
+
+	h2 {
+		font-size: 2rem;
+		max-width: 20ch;
+		overflow: hidden;
+	}
+
+	p {
+		margin-bottom: 2rem;
+	}
+
+	button {
+		color: rgba(black, .7);
+		font-weight: 700;
+		min-width: fit-content;
+	}
+}
+
+.btn-grp-modal {
+	@extend .btn-grp;
+	$bg-clr: white;
+
+	button {
+
+		&:first-child {
+			border-right: 1px solid $base;
+
+			&:active {
+				background-color: mix($bg-clr, black, 90%);
+			}
+		}
+
+		&:last-child {
+
+			&:active {
+				background-color: mix($bg-clr, black, 90%);
+			}
+		}
+	}
+}
+
+#winner-modal {
+	display: none;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Design System</title>
+</head>
+
+<body>
+	<header>
+		<!-- app name -->
+		<h1>main heading</h1>
+		<svg class="heading-svg" enable-background="new 0 0 25.726 25.726" viewBox="0 0 25.726 25.726" xmlns="http://www.w3.org/2000/svg">
+			<g fill="#030104">
+				<circle cx="3.35" cy="2.813" r="2.813" />
+				<path d="m5.018 11.613 9.561 9.56c-1.177-.019-2.352-.225-3.461-.667-.445-.084-2.235-.374-2.918.309-1.563 1.563-2.991 3.697-3.773 4.479-.781.781-1.89.456-2.938-.592-1.049-1.049-1.35-2.18-.592-2.938s2.916-2.209 4.48-3.773c.716-.717.344-2.699.287-2.979-.427-1.091-.626-2.244-.646-3.399zm17.39-7.831c-4.649-4.65-10.759-3.023-14.563.782-1.409 1.407-2.294 3.138-2.659 4.952l11.485 11.486c1.814-.365 3.546-1.248 4.953-2.656 3.806-3.806 5.436-9.913.784-14.564z" />
+			</g>
+		</svg>
+	</header>
+
+	<!-- matches input -->
+	<div class="input-grp matches">
+		<h2>Matches</h2>
+		<label for="one">one</label>
+		<input type="number" name="one" min="0" max="999">
+		<span>/</span>
+		<label for="two">two</label>
+		<input type="number" name="two" min="0" max="999">
+	</div>
+
+	<!-- block style -->
+	<div class="block winner-history">
+		<h2 class="h2-winner">winner</h2>
+		<ul class="ul-win-history">
+			<li>player 1</li>
+			<li>player 2</li>
+		</ul>
+	</div>
+
+	<!-- score stype -->
+	<div class="input-grp score">
+		<div>
+			<input class="one" type="number" name="one" min="0" max="999">
+			<label for="one">P1</label>
+		</div>
+		<span>/</span>
+		<div>
+			<input class="two" type="number" name="two" min="0" max="999">
+			<label for="two">P2</label>
+		</div>
+	</div>
+
+	<!-- button group -->
+	<div class="btn-grp">
+		<button>+1</button>
+		<button>+1</button>
+	</div>
+	<div class="player-name-grp">
+		<label for="p1-name">player 1 name</label>
+		<input type="text" name="p1-name" placeholder="player 1">
+		<label for="p2-name">player 2 name</label>
+		<input type="text" name="ps-name" placeholder="player 2">
+	</div>
+	<button class="btn-reset">reset</button>
+
+
+</body>
+
+</html>

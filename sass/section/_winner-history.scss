@@ -1,0 +1,20 @@
+@use '../abstracts'as *;
+
+
+.winner-history {
+	color: $f-clr;
+	min-height: 20vh;
+	h2 {
+		font-size: 1rem;
+	}
+
+	ul {
+		margin: 0;
+		list-style: none;
+
+		li {
+
+		}
+	}
+
+}

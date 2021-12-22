@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Score Keeper</title>
+</head>
+
+<body>
+
+	<header>
+		<H1>Score Keeper</H1>
+		<svg class="heading-svg" enable-background="new 0 0 25.726 25.726" viewBox="0 0 25.726 25.726" xmlns="http://www.w3.org/2000/svg">
+			<g fill="#030104">
+				<circle cx="3.35" cy="2.813" r="2.813" />
+				<path d="m5.018 11.613 9.561 9.56c-1.177-.019-2.352-.225-3.461-.667-.445-.084-2.235-.374-2.918.309-1.563 1.563-2.991 3.697-3.773 4.479-.781.781-1.89.456-2.938-.592-1.049-1.049-1.35-2.18-.592-2.938s2.916-2.209 4.48-3.773c.716-.717.344-2.699.287-2.979-.427-1.091-.626-2.244-.646-3.399zm17.39-7.831c-4.649-4.65-10.759-3.023-14.563.782-1.409 1.407-2.294 3.138-2.659 4.952l11.485 11.486c1.814-.365 3.546-1.248 4.953-2.656 3.806-3.806 5.436-9.913.784-14.564z" />
+			</g>
+		</svg>
+	</header>
+
+	<!-- matches -->
+	<section class="input-grp matches">
+		<h2>Matches</h2>
+		<label for="match-p1">one</label>
+		<input type="number" name="match-p1" min="0" max="999" readonly>
+		<span>/</span>
+		<label for="match-p2">two</label>
+		<input type="number" name="match-p2" min="0" max="999" readonly>
+	</section>
+
+	<!-- best of winners -->
+	<section class="block winner-history">
+		<h2 class="h2-winner">winner - not yet implemented</h2>
+		<ul id="ul-win-history">
+			<li>player 1</li>
+			<li>player 2</li>
+		</ul>
+	</section>
+
+	<!-- score section -->
+	<section class="block">
+		<section class="input-grp score">
+			<div>
+				<input class="one" type="number" name="score-p1" min="0" max="999" placeholder="0" readonly>
+				<label class="sr-only" for="score-p1">P1</label>
+			</div>
+			<span>/</span>
+			<div>
+				<input class="two" type="number" name="score-p2" min="0" max="999" placeholder="0" readonly>
+				<label class="sr-only" for="score-p2">P2</label>
+			</div>
+		</section>
+
+		<!-- controls -->
+		<section class="btn-grp-score">
+			<button id="button-p1">+1</button>
+			<button id="button-p2">+1</button>
+		</section>
+		<section class="player-name-grp">
+			<label for="name-p1">player 1 name</label>
+			<input type="text" name="name-p1" value="player 1" readonly>
+			<label for="name-p2">player 2 name</label>
+			<input type="text" name="name-p2" value="player 2" readonly>
+		</section>
+		<button id="reset" class="btn-reset">reset</button>
+	</section>
+
+	<div id="winner-modal" class="modal-container">
+		<div class="modal block">
+			<h2>Player 9 wins!</h2>
+			<p></p>
+			<div class="btn-grp-modal">
+<!-- 				<button id="next-round">Next Round</button> -->
+				<button id="new-game">New Game</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+
+</html>

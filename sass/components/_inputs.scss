@@ -1,0 +1,17 @@
+@use '../abstracts'as *;
+@use '../base/utility';
+
+input {
+	font-family: $ff-nuni;
+	text-align: center;
+}
+
+.input-grp {
+	@extend .flex;
+
+	input {
+		font-weight: 700;
+		border: none;
+		border-radius: 6px;
+	}
+}
