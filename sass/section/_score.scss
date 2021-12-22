@@ -3,9 +3,10 @@
 @use '../components/buttons';
 
 .score {
-	$fs: 2rem;
+	$fs: 4rem;
 	--gap: 1.3rem;
 	justify-content: center;
+	align-items: center;
 	margin-bottom: 2rem;
 
 	div {

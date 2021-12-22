@@ -266,6 +266,7 @@ section {
 .score {
 	--gap: 1.3rem;
 	justify-content: center;
+	align-items: center;
 	margin-bottom: 2rem;
 }
 .score div {
@@ -280,13 +281,13 @@ section {
 .score input {
 	display: block;
 	width: 8rem;
-	font-size: 2rem;
-	line-height: 2rem;
+	font-size: 4rem;
+	line-height: 4rem;
 	text-align: center;
 }
 .score span {
-	font-size: 2rem;
-	line-height: 2rem;
+	font-size: 4rem;
+	line-height: 4rem;
 }
 
 .btn-grp-score button {
