@@ -1,6 +1,11 @@
 @use '../abstracts' as *;
+@use 'utility';
 
 body {
+	@extend .flex;
+	flex-direction: column;
+	justify-content: center;
+
 	color: $f-clr;
 	font-family: $ff-nuni;
 	margin-inline: auto;
