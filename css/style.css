@@ -272,10 +272,10 @@ section {
 .score div {
 	width: fit-content;
 }
-.score div .one {
+.score div #score-p1 {
 	color: #FF5B5B;
 }
-.score div .two {
+.score div #score-p2 {
 	color: #3C3CFF;
 }
 .score input {

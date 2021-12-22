@@ -28,11 +28,22 @@ const winningScore = 11;
 let isGameOver = false;
 let round = 1;
 
+// setters
+function setScore(player, value) {
+	player.score = value;
+}
+
+function setDisplay(player, elm, value) {
+	player[elm].value = value;
+	player[elm].value = value;
+}
 
 function updateScores(player) {
 	if (!isGameOver) {
-		player.score += 1;
-		player.scoreDisplay.value = player.score;
+		let currentScore = player.score;
+		let newScore = player.score + 1;
+		setScore(player, newScore);
+		setDisplay(player, 'scoreDisplay', newScore);
 	}
 }
 
@@ -63,31 +74,31 @@ function toggleModal(elm, showBool) {
 	}
 }
 
-function clearScore() {
-	p1.score = 0;
-	p2.score = 0;
-}
-
-function clearDisplay(elm) {
-	p1[elm].value = 0;
-	p2[elm].value = 0;
-}
-
 
 // event listners
 p1.button.addEventListener('click', () => {
-	updateScores(p1, p2);
+	updateScores(p1);
 	setGameOver(p1, p2, winningScore);
 })
 
 p2.button.addEventListener('click', () => {
-	updateScores(p2, p1);
+	updateScores(p2);
 	setGameOver(p1, p2, winningScore);
 })
 
+resetButton.addEventListener('click', () => {
+	setScore(p1, 0);
+	setScore(p2, 0);
+	setDisplay(p1, 'scoreDisplay', 0);
+	setDisplay(p2, 'scoreDisplay', 0);
+	isGameOver = false;
+})
+
 newGame.addEventListener('click', () => {
-	clearScore();
-	clearDisplay('scoreDisplay');
+	setScore(p1, 0);
+	setScore(p2, 0);
+	setDisplay(p1, 'scoreDisplay', 0);
+	setDisplay(p2, 'scoreDisplay', 0);
 	isGameOver = false;
 	toggleModal(winnerModal, false);
 });
