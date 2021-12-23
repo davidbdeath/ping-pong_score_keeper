@@ -24,12 +24,12 @@
 
 	<!-- matches -->
 	<section class="input-grp matches">
-		<h2>Matches</h2>
-		<label for="match-p1">one</label>
-		<input type="number" name="match-p1" min="0" max="999" readonly>
+		<h2>Match</h2>
+		<label for="match-game">one</label>
+		<input type="number" name="match-round" min="0" max="999" value="1" readonly>
 		<span>/</span>
-		<label for="match-p2">two</label>
-		<input type="number" name="match-p2" min="0" max="999" readonly>
+		<label for="match-game">two</label>
+		<input type="number" name="match-game" min="0" max="999" value="5" readonly>
 	</section>
 
 	<!-- best of winners -->
@@ -74,7 +74,7 @@
 			<h2>Player 9 wins!</h2>
 			<p></p>
 			<div class="btn-grp-modal">
-<!-- 				<button id="next-round">Next Round</button> -->
+				<button id="next-round">Next Round</button>
 				<button id="new-game">New Game</button>
 			</div>
 		</div>

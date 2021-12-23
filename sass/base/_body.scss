@@ -3,6 +3,8 @@
 
 body {
 	@extend .flex;
+
+	row-gap: 3vh;
 	flex-direction: column;
 	justify-content: center;
 
