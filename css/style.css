@@ -125,7 +125,7 @@ body {
 	font-family: "Nunito", sans-serif;
 	margin-inline: auto;
 	width: min(90vw, 500px);
-	background-color: #272727;
+	background-color: #051F5F;
 }
 
 .block {
@@ -244,7 +244,7 @@ button {
 }
 
 .btn-grp-modal button:first-child {
-	border-right: 1px solid #272727;
+	border-right: 1px solid #051F5F;
 }
 .btn-grp-modal button:first-child:active {
 	background-color: #e6e6e6;
