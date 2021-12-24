@@ -26,8 +26,8 @@ const newSetBtn = document.getElementById('new-set');
 const matchRoundDisplay = document.querySelector('input[name=match-game]');
 const matchGameDisplay = document.querySelector('input[name=match-set]');
 const winHistoryListElm = document.getElementById('ul-win-history');
-// const winHistoryList = [];
-const winHistoryList = ['davd','jake','mark', 'doug', 'jesse', 'mike', 'mark', 'frank', 'donald', 'joseph','jake','mark', 'doug', 'jesse'];
+const winHistoryList = [];
+// const winHistoryList = ['davd','jake','mark', 'doug', 'jesse', 'mike', 'mark', 'frank', 'donald', 'joseph','jake','mark', 'doug', 'jesse'];
 const winnerListLocalStor = window.localStorage;
 
 const winningScore = 11;
