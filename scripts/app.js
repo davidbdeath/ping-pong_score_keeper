@@ -23,8 +23,13 @@ const resetBtn = document.getElementById('reset');
 const nextRoundBtn = document.getElementById('next-round');
 const newGameBtn = document.getElementById('new-game');
 const newSetBtn = document.getElementById('new-set');
+
+// document input fields
 const matchRoundDisplay = document.querySelector('input[name=match-game]');
 const matchGameDisplay = document.querySelector('input[name=match-set]');
+const player1NameDisplay = document.querySelector('input[name=name-p1]');
+const player2NameDisplay = document.querySelector('input[name=name-p2]');
+
 const winHistoryListElm = document.getElementById('ul-win-history');
 const winHistoryList = [];
 // const winHistoryList = ['davd','jake','mark', 'doug', 'jesse', 'mike', 'mark', 'frank', 'donald', 'joseph','jake','mark', 'doug', 'jesse'];
@@ -78,19 +83,13 @@ function updateMatchDisplay() {
 }
 
 function updateModalContent(elm, heading, text) {
-	elm.firstElementChild.childNodes[1].textContent = heading;
-	elm.firstElementChild.childNodes[2].textContent = `Round ${text}`;
+	if (arguments.length == 2) {
+		elm.firstElementChild.childNodes[1].textContent = heading;
+	} else {
+		elm.firstElementChild.childNodes[1].textContent = heading;
+		elm.firstElementChild.childNodes[2].textContent = text;
+	}
 }
-
-
-
-
-
-
-
-
-
-
 
 function winnerList(player) {
 	addToWinnerListArray(winHistoryList, player);
@@ -121,17 +120,6 @@ function getWinnerLocalStor() {
 		addToWinHistoryListElm(winHistoryListElm, winHistoryList);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 // new
@@ -168,15 +156,17 @@ function gameOver(player1, player2, winScore) {
 			isGameOver = true;
 
 			if (player1.score > player2.score) {
-				updateModalContent(winnerModal, `${player1.name} wins!`, `round ${round}`)
+				updateModalContent(winnerModal, `${player1.name} wins!`, `Round ${round}`)
 			} else {
-				updateModalContent(winnerModal, `${player2.name} wins!`, `round ${round}`)
+				updateModalContent(winnerModal, `${player2.name} wins!`, `Round ${round}`)
 			}
 
 			if (player1.matchesWon === winningMatch - 1) {
+				updateModalContent(matchModal, `${player1.name} wins!`);
 				toggleModalVisibility(matchModal, true);
 				winnerList(player1.name);
 			} else if (player2.matchesWon === winningMatch - 1) {
+				updateModalContent(matchModal, `${player2.name} wins!`);
 				toggleModalVisibility(matchModal, true);
 				winnerList(player2.name);
 			} else {
@@ -222,3 +212,13 @@ nextRoundBtn.addEventListener('click', () => {
 	newGame();
 	toggleModalVisibility(winnerModal, false);
 });
+
+player1NameDisplay.addEventListener('change', () => {
+	setPlayerProp(p1, 'name', player1NameDisplay.value);
+	console.log(p1.name);
+})
+
+player2NameDisplay.addEventListener('change', () => {
+	setPlayerProp(p2, 'name', player2NameDisplay.value);
+	console.log(p2.name);
+})
