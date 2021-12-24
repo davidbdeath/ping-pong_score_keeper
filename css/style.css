@@ -162,7 +162,7 @@ h1 {
 	text-transform: uppercase;
 }
 
-h2 {
+h2, .winner-history button {
 	font-weight: 600;
 	font-size: 1.5rem;
 	text-transform: uppercase;
@@ -254,7 +254,8 @@ button {
 }
 
 #winner-modal,
-#match-modal {
+#match-modal,
+#winner-menu-modal {
 	display: none;
 }
 
@@ -262,8 +263,16 @@ button {
 	color: #fff;
 	height: 20vh;
 }
-.winner-history h2 {
+.winner-history button {
+	margin-bottom: 0.5rem;
 	font-size: 1rem;
+	background: none;
+	border: 1px solid #fff;
+	-webkit-transition: opacity 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out;
+}
+.winner-history button:focus, .winner-history button:hover {
+	opacity: 0.8;
 }
 .winner-history ul {
 	--gap: 0;
@@ -275,12 +284,23 @@ button {
 	    -ms-flex-flow: wrap column;
 	        flex-flow: wrap column;
 	margin: 0;
+	padding-inline: 0.5rem;
 	height: 100%;
 	padding-bottom: 1rem;
 	list-style: none;
 	overflow: auto;
 	white-space: nowrap;
 }
+#winner-menu-btn {
+	-webkit-transition: opacity 0.1s ease-in-out;
+	transition: opacity 0.1s ease-in-out;
+}
+
+#winner-menu-btn:focus,
+#winner-menu-btn:hover {
+	opacity: 0.8;
+}
+
 header {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;

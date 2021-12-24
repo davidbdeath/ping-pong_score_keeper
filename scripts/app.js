@@ -15,14 +15,21 @@ const p2 = {
 }
 
 // modals
+
+const winnerMenuModal = document.getElementById('winner-menu-modal');
 const winnerModal = document.getElementById('winner-modal');
 const matchModal = document.getElementById('match-modal');
 
-// document buttons
+// document buttons or quasi buttons
 const resetBtn = document.getElementById('reset');
 const nextRoundBtn = document.getElementById('next-round');
 const newGameBtn = document.getElementById('new-game');
 const newSetBtn = document.getElementById('new-set');
+
+// winner menu
+const winnerMenuBtn = document.getElementById('winner-menu-btn');
+const winnerClearBtn = document.getElementById('winner-menu-clear');
+const winnerCancelBtn = document.getElementById('winner-menu-cancel');
 
 // document input fields
 const matchRoundDisplay = document.querySelector('input[name=match-game]');
@@ -39,7 +46,10 @@ const winningScore = 11;
 let winningMatch = 3;
 let isGameOver = false;
 
+
+// --------------
 // setters
+// --------------
 function setScore(player, value) {
 	player.score = value;
 }
@@ -53,7 +63,9 @@ function setPlayerProp(player, prop, value) {
 }
 
 
+// --------------
 // updaters
+// --------------
 function updatePlayerScores(player) {
 	if (!isGameOver) {
 		let currentScore = player.score;
@@ -91,6 +103,17 @@ function updateModalContent(elm, heading, text) {
 	}
 }
 
+function nameReset() {
+	setPlayerProp(p1, 'name', 'Player 1');
+	setPlayerProp(p2, 'name', 'Player 2');
+	player1NameDisplay.value = 'Player 1';
+	player2NameDisplay.value = 'Player 2';
+}
+
+
+// --------------
+// winner list
+// --------------
 function winnerList(player) {
 	addToWinnerListArray(winHistoryList, player);
 	setWinnerLocalStor(winnerListLocalStor, winHistoryList);
@@ -105,12 +128,26 @@ function addToWinHistoryListElm(elm, array) {
 	})
 }
 
+function clearWinHistoryListElm(elm) {
+	while (elm.firstChild) {
+		elm.removeChild(elm.firstChild);
+	}
+}
+
 function setWinnerLocalStor(store, array) {
 	store.setItem('winnerList', JSON.stringify(array));
 }
 
+function clearWinnerLocalStor(store) {
+	store.clear();
+}
+
 function addToWinnerListArray(array, player) {
 	array.unshift(player);
+}
+
+function clearWinnerListArray(array) {
+	array.splice(0, array.length + 1)
 }
 
 function getWinnerLocalStor() {
@@ -122,7 +159,9 @@ function getWinnerLocalStor() {
 }
 
 
+// --------------
 // new
+// --------------
 function newGame() {
 	setScore(p1, 0);
 	setScore(p2, 0);
@@ -139,7 +178,9 @@ function newSet() {
 }
 
 
+// --------------
 // modal
+// --------------
 function toggleModalVisibility(elm, showBool) {
 	if (showBool === true) {
 		elm.style.display = 'unset';
@@ -176,7 +217,9 @@ function gameOver(player1, player2, winScore) {
 	}
 }
 
+// --------------
 // event listners
+// --------------
 window.addEventListener('load', getWinnerLocalStor);
 
 p1.button.addEventListener('click', () => {
@@ -190,10 +233,27 @@ p2.button.addEventListener('click', () => {
 })
 
 resetBtn.addEventListener('click', () => {
+	nameReset()
 	newSet()
 	newGame();
 	isGameOver = false;
 })
+
+winnerMenuBtn.addEventListener('click', () => {
+	toggleModalVisibility(winnerMenuModal, true);
+})
+
+winnerClearBtn.addEventListener('click', () => {
+	clearWinnerLocalStor(winnerListLocalStor);
+	clearWinHistoryListElm(winHistoryListElm);
+	clearWinnerListArray(winHistoryList);
+	toggleModalVisibility(winnerMenuModal, false);
+})
+
+winnerCancelBtn.addEventListener('click', () => {
+	toggleModalVisibility(winnerMenuModal, false);
+})
+
 
 newGameBtn.addEventListener('click', () => {
 	newGame();
@@ -215,10 +275,8 @@ nextRoundBtn.addEventListener('click', () => {
 
 player1NameDisplay.addEventListener('change', () => {
 	setPlayerProp(p1, 'name', player1NameDisplay.value);
-	console.log(p1.name);
 })
 
 player2NameDisplay.addEventListener('change', () => {
 	setPlayerProp(p2, 'name', player2NameDisplay.value);
-	console.log(p2.name);
 })

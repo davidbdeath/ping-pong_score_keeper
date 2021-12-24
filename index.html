@@ -35,7 +35,7 @@
 
 	<!-- best of winners -->
 	<section class="block winner-history">
-		<h2 class="h2-winner">winners</h2>
+		<button id="winner-menu-btn" class="h2-winner">winners</button>
 		<ul id="ul-win-history">
 		</ul>
 	</section>
@@ -68,6 +68,8 @@
 		<button id="reset" class="btn-reset">reset</button>
 	</section>
 
+
+	<!-- modals -->
 	<div id="winner-modal" class="modal-container">
 		<div class="modal block">
 			<h2></h2>
@@ -75,6 +77,16 @@
 			<div class="btn-grp-modal">
 				<button id="next-round">Next Round</button>
 				<button id="new-game">New Game</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="winner-menu-modal" class="modal-container">
+		<div class="modal block">
+			<h2>Clear Winners?</h2>
+			<div class="btn-grp-modal">
+				<button id="winner-menu-clear">Clear</button>
+				<button id="winner-menu-cancel">Cancel</button>
 			</div>
 		</div>
 	</div>

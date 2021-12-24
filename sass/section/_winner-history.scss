@@ -1,11 +1,22 @@
 @use '../abstracts'as *;
 @use '../base/utility';
+@use '../components/headings';
 
 .winner-history {
 	color: $f-clr;
 	height: 20vh;
-	h2 {
+	button {
+		@extend h2;
+		margin-bottom: .5rem;
 		font-size: 1rem;
+		background: none;
+		border: 1px solid $f-clr;
+		transition: opacity .1s ease-in-out;
+
+		&:focus,
+		&:hover {
+			opacity: .8;
+		}
 	}
 
 	ul {
@@ -15,6 +26,7 @@
 		flex-flow: wrap column;
 
 		margin: 0;
+		padding-inline: .5rem;
 		height: 100%;
 		padding-bottom: 1rem;
 		list-style: none;
@@ -27,4 +39,13 @@
 		}
 	}
 
+}
+
+#winner-menu-btn {
+	transition: opacity .1s ease-in-out;
+}
+
+#winner-menu-btn:focus,
+#winner-menu-btn:hover {
+	opacity: .8;
 }
