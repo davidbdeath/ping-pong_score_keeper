@@ -3,6 +3,7 @@
 
 .matches {
 	$fs: 2rem;
+	align-items: center;
 	margin-top: 1rem;
 	margin-left: 2rem;
 
@@ -11,7 +12,8 @@
 	}
 
 	input {
-		height: $fs;
+		// height: $fs;
+		padding: 0;
 		width: 4rem;
 		font-size: $fs;
 		line-height: $fs;

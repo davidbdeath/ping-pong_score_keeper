@@ -26,18 +26,16 @@
 	<section class="input-grp matches">
 		<h2>Match</h2>
 		<label for="match-game">one</label>
-		<input type="number" name="match-round" min="0" max="999" value="1" readonly>
+		<input type="number" name="match-game" min="0" max="999" value="1" readonly>
 		<span>/</span>
-		<label for="match-game">two</label>
-		<input type="number" name="match-game" min="0" max="999" value="5" readonly>
+		<label for="match-set">two</label>
+		<input type="number" name="match-set" min="0" max="999" value="5" readonly>
 	</section>
 
 	<!-- best of winners -->
 	<section class="block winner-history">
-		<h2 class="h2-winner">winner - not yet implemented</h2>
+		<h2 class="h2-winner">winners</h2>
 		<ul id="ul-win-history">
-			<li>player 1</li>
-			<li>player 2</li>
 		</ul>
 	</section>
 
@@ -71,12 +69,20 @@
 
 	<div id="winner-modal" class="modal-container">
 		<div class="modal block">
-			<h2>Player 9 wins!</h2>
+			<h2></h2>
 			<p></p>
 			<div class="btn-grp-modal">
 				<button id="next-round">Next Round</button>
 				<button id="new-game">New Game</button>
 			</div>
+		</div>
+	</div>
+
+	<div id="match-modal" class="modal-container">
+		<div class="modal block">
+			<h2>Player 1 wins!</h2>
+			<p>Best 3 out of 5.</p>
+			<button id="new-set">New Set</button>
 		</div>
 	</div>
 
