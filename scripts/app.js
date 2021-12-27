@@ -34,13 +34,12 @@ const winnerCancelBtn = document.getElementById('winner-menu-cancel');
 // document input fields
 const matchRoundDisplay = document.querySelector('input[name=match-game]');
 const matchGameDisplay = document.querySelector('input[name=match-set]');
-const player1NameDisplay = document.querySelector('input[name=name-p1]');
-const player2NameDisplay = document.querySelector('input[name=name-p2]');
+const player1NameInput = document.querySelector('input[name=name-p1]');
+const player2NameInput = document.querySelector('input[name=name-p2]');
 
 const winHistoryListElm = document.getElementById('ul-win-history');
 const winHistoryList = [];
-// const winHistoryList = ['davd','jake','mark', 'doug', 'jesse', 'mike', 'mark', 'frank', 'donald', 'joseph','jake','mark', 'doug', 'jesse'];
-const winnerListLocalStor = window.localStorage;
+const localStor = window.localStorage;
 
 const winningScore = 11;
 let winningMatch = 3;
@@ -106,8 +105,8 @@ function updateModalContent(elm, heading, text) {
 function nameReset() {
 	setPlayerProp(p1, 'name', 'Player 1');
 	setPlayerProp(p2, 'name', 'Player 2');
-	player1NameDisplay.value = 'Player 1';
-	player2NameDisplay.value = 'Player 2';
+	player1NameInput.value = 'Player 1';
+	player2NameInput.value = 'Player 2';
 }
 
 
@@ -115,12 +114,12 @@ function nameReset() {
 // winner list
 // --------------
 function winnerList(player) {
-	addToWinnerListArray(winHistoryList, player);
-	setWinnerLocalStor(winnerListLocalStor, winHistoryList);
-	addToWinHistoryListElm(winHistoryListElm, winHistoryList)
+	addToFrontOfArray(winHistoryList, player);
+	setLocalStor(localStor, winHistoryList);
+	addToElm(winHistoryListElm, winHistoryList)
 }
 
-function addToWinHistoryListElm(elm, array) {
+function addToElm(elm, array) {
 	array.forEach((name) => {
 		const li = document.createElement('li');
 		li.textContent = name;
@@ -134,27 +133,27 @@ function clearWinHistoryListElm(elm) {
 	}
 }
 
-function setWinnerLocalStor(store, array) {
+function setLocalStor(store, array) {
 	store.setItem('winnerList', JSON.stringify(array));
 }
 
-function clearWinnerLocalStor(store) {
+function clearALocalStor(store) {
 	store.clear();
 }
 
-function addToWinnerListArray(array, player) {
+function addToFrontOfArray(array, player) {
 	array.unshift(player);
 }
 
-function clearWinnerListArray(array) {
+function clearArray(array) {
 	array.splice(0, array.length + 1)
 }
 
 function getWinnerLocalStor() {
-	let storeArray = JSON.parse(winnerListLocalStor.getItem('winnerList'));
+	let storeArray = JSON.parse(localStor.getItem('winnerList'));
 	if (storeArray) {
 		winHistoryList.push(...storeArray);
-		addToWinHistoryListElm(winHistoryListElm, winHistoryList);
+		addToElm(winHistoryListElm, winHistoryList);
 	}
 }
 
@@ -244,9 +243,9 @@ winnerMenuBtn.addEventListener('click', () => {
 })
 
 winnerClearBtn.addEventListener('click', () => {
-	clearWinnerLocalStor(winnerListLocalStor);
+	clearALocalStor(localStor);
 	clearWinHistoryListElm(winHistoryListElm);
-	clearWinnerListArray(winHistoryList);
+	clearArray(winHistoryList);
 	toggleModalVisibility(winnerMenuModal, false);
 })
 
@@ -273,10 +272,10 @@ nextRoundBtn.addEventListener('click', () => {
 	toggleModalVisibility(winnerModal, false);
 });
 
-player1NameDisplay.addEventListener('change', () => {
-	setPlayerProp(p1, 'name', player1NameDisplay.value);
+player1NameInput.addEventListener('change', () => {
+	setPlayerProp(p1, 'name', player1NameInput.value);
 })
 
-player2NameDisplay.addEventListener('change', () => {
-	setPlayerProp(p2, 'name', player2NameDisplay.value);
+player2NameInput.addEventListener('change', () => {
+	setPlayerProp(p2, 'name', player2NameInput.value);
 })

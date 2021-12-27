@@ -188,6 +188,10 @@ h2, .winner-history h2 {
 button {
 	color: #fff;
 	border: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 
 .btn-grp, .btn-grp-score, .btn-grp-modal {
