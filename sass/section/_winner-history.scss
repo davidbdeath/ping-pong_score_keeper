@@ -5,12 +5,12 @@
 .winner-history {
 	color: $f-clr;
 	height: 20vh;
-	button {
+	h2 {
 		@extend h2;
 		margin-bottom: .5rem;
 		font-size: 1rem;
+		text-decoration: underline;
 		background: none;
-		border: 1px solid $f-clr;
 		transition: opacity .1s ease-in-out;
 
 		&:focus,

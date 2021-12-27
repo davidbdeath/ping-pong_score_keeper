@@ -125,13 +125,12 @@ body {
 	font-family: "Nunito", sans-serif;
 	margin-inline: auto;
 	width: min(90vw, 500px);
-	background-color: #051F5F;
+	background-color: #0d2255;
 }
 
 .block {
 	padding: 1rem;
-	background-color: rgba(255, 255, 255, 0.1);
-	border-radius: 6px;
+	border: 4px solid rgba(255, 255, 255, 0.25);
 }
 
 input {
@@ -162,7 +161,7 @@ h1 {
 	text-transform: uppercase;
 }
 
-h2, .winner-history button {
+h2, .winner-history h2 {
 	font-weight: 600;
 	font-size: 1.5rem;
 	text-transform: uppercase;
@@ -244,7 +243,7 @@ button {
 }
 
 .btn-grp-modal button:first-child {
-	border-right: 1px solid #051F5F;
+	border-right: 1px solid #0d2255;
 }
 .btn-grp-modal button:first-child:active {
 	background-color: #e6e6e6;
@@ -263,15 +262,15 @@ button {
 	color: #fff;
 	height: 20vh;
 }
-.winner-history button {
+.winner-history h2 {
 	margin-bottom: 0.5rem;
 	font-size: 1rem;
+	text-decoration: underline;
 	background: none;
-	border: 1px solid #fff;
 	-webkit-transition: opacity 0.1s ease-in-out;
 	transition: opacity 0.1s ease-in-out;
 }
-.winner-history button:focus, .winner-history button:hover {
+.winner-history h2:focus, .winner-history h2:hover {
 	opacity: 0.8;
 }
 .winner-history ul {
