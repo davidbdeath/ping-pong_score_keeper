@@ -1,16 +1,32 @@
-@use '../abstracts' as *;
+@use '../abstracts'as *;
 @use 'utility';
 
+:root {
+	font-size: calc(1.9vh);
+}
+
 body {
+	color: $f-clr;
+	background-color: $base;
+	overflow: hidden;
+}
+
+hr {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 2px solid rgba($f-clr, .5);
+	width: $width;
+}
+
+.body-container {
 	@extend .flex;
 
-	row-gap: 3vh;
+	row-gap: 2rem;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: start;
 
-	color: $f-clr;
 	font-family: $ff-nuni;
 	margin-inline: auto;
 	width: $width;
-	background-color: $base;
 }

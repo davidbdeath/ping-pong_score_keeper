@@ -4,14 +4,12 @@
 button {
 	color: $f-clr;
 	border: none;
-	border-radius: 6px;
 }
 
 .btn-grp {
 	@extend .flex;
 	--gap: 0;
 	width: 100%;
-	border-radius: 6px;
 	overflow: hidden;
 
 	button {

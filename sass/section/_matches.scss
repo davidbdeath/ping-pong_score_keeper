@@ -2,18 +2,27 @@
 @use '../base/utility';
 
 .matches {
-	$fs: 2rem;
+	$fs: 1.5rem;
 	align-items: center;
-	margin-top: 1rem;
+
 	margin-left: 2rem;
+
+	h2 {
+		font-size: 1.3rem;
+		line-height: 1.3rem;
+	}
+
+	p {
+		font-weight: 300;
+		text-align: right;
+	}
 
 	label {
 		@extend .sr-only;
 	}
 
 	input {
-		// height: $fs;
-		padding: 0;
+		height: 2rem;
 		width: 4rem;
 		font-size: $fs;
 		line-height: $fs;

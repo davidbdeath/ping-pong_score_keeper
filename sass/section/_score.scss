@@ -3,44 +3,31 @@
 @use '../components/buttons';
 
 .score {
-	$fs: 4rem;
-	--gap: 1.3rem;
-	justify-content: center;
+	$fs: 3rem;
+	justify-content: space-around;
 	align-items: center;
 	margin-bottom: 2rem;
 
-	div {
-		width: fit-content;
-
-		#score-p1 {
-			color: $p1;
-		}
-
-		#score-p2 {
-			color: $p2;
-		}
+	#score-p1 {
+		color: $p1;
 	}
 
-	// label {
-	// 	display: block;
-	// 	margin-top: .75rem;
-	// 	font-size: 1.5rem;
-	// 	text-align: center;
-	// }
+	#score-p2 {
+		color: $p2;
+	}
 
 	input {
-		display: block;
-		padding: 0;
+		height: 4rem;
 		width: 8rem;
-		font-size: $fs;
-		text-align: center;
-	}
-
-	span {
 		font-size: $fs;
 		line-height: $fs;
 	}
 
+	span {
+		color: rgba($f-clr, .5);
+		font-size: $fs;
+		line-height: $fs;
+	}
 }
 
 .btn-grp-score {

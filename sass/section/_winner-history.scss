@@ -7,7 +7,9 @@
 	height: 20vh;
 	h2 {
 		@extend h2;
-		margin-bottom: .5rem;
+		margin-top: -1.5rem;
+		margin-left: -1rem;
+		margin-bottom: 1rem;
 		font-size: 1rem;
 		text-decoration: underline;
 		background: none;
@@ -28,7 +30,7 @@
 		margin: 0;
 		padding-inline: .5rem;
 		height: 100%;
-		padding-bottom: 1rem;
+		// padding-bottom: 1rem;
 		list-style: none;
 		overflow:auto;
 		white-space: nowrap;
