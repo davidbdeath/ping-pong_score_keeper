@@ -26,8 +26,11 @@ const nextRoundBtn = document.getElementById('next-round');
 const newGameBtn = document.getElementById('new-game');
 const newSetBtn = document.getElementById('new-set');
 
+// match menu
+const matchMenu = document.getElementById('match-menu');
+
 // winner menu
-const winnerMenuBtn = document.getElementById('winner-menu-btn');
+const winnerMenu = document.getElementById('winner-menu');
 const winnerClearBtn = document.getElementById('winner-menu-clear');
 const winnerCancelBtn = document.getElementById('winner-menu-cancel');
 
@@ -238,7 +241,7 @@ resetBtn.addEventListener('click', () => {
 	isGameOver = false;
 })
 
-winnerMenuBtn.addEventListener('click', () => {
+winnerMenu.addEventListener('click', () => {
 	toggleModalVisibility(winnerMenuModal, true);
 })
 

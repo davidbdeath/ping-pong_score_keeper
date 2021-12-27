@@ -287,6 +287,9 @@ button {
 	margin-top: -1.5rem;
 	margin-left: -1rem;
 	margin-bottom: 1rem;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
 	font-size: 1rem;
 	text-decoration: underline;
 	background: none;
@@ -344,6 +347,7 @@ header .heading-svg g {
 .matches h2 {
 	font-size: 1.3rem;
 	line-height: 1.3rem;
+	text-align: right;
 }
 .matches p {
 	font-weight: 300;
