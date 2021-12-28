@@ -15,5 +15,9 @@
 		color: $f-clr;
 		border: none;
 		background: none;
+
+		&::placeholder {
+			// color: $f-clr;
+		}
 	}
 }

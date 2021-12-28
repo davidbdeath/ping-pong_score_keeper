@@ -8,6 +8,7 @@
 body {
 	color: $f-clr;
 	background-color: $base;
+	background: linear-gradient(to bottom right, $gradient);
 	overflow: hidden;
 }
 

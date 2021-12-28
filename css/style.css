@@ -119,6 +119,8 @@ select {
 body {
 	color: #fff;
 	background-color: #0d2255;
+	background: -webkit-gradient(linear, left top, right bottom, from(#0d2255), to(#1a1c33));
+	background: linear-gradient(to bottom right, #0d2255, #1a1c33);
 	overflow: hidden;
 }
 
