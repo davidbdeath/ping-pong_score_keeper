@@ -12,6 +12,7 @@ button {
 	--gap: 0;
 	width: 100%;
 	overflow: hidden;
+	border-radius: $border-rad;
 
 	button {
 		$bg-clr: white;
@@ -47,4 +48,5 @@ button {
 	text-transform: uppercase;
 	color: rgba(black, .7);
 	background-color: $f-clr;
+	border-radius: $border-rad;
 }

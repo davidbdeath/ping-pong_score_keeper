@@ -1,5 +1,5 @@
-@use '../abstracts'as *;
-@use '../base/utility';
+@use '../abstracts' as *;
+@use '../base/utility' as *;
 
 input {
 	font-family: $ff-nuni;
@@ -12,18 +12,17 @@ input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 }
 
-input[type=number] {
+input[type='number'] {
 	-moz-appearance: textfield;
 }
-
 
 .input-grp {
 	@extend .flex;
 
 	input {
 		padding: 0;
-		font-weight: 700;
 		border: none;
-		border-radius: 0;
+		border-radius: $border-rad;
+		font-weight: 700;
 	}
 }

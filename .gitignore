@@ -2,3 +2,4 @@
 .nova/
 prepros.config
 config.codekit3
+.prettierrc
